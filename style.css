@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+/* common styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #333;
+}
+/* end of common styles */
+
+/* start navbar */
+.navbar {
+  position: fixed;
+  height: 125px;
+  width: 100%;
+  top: -125px;
+  left: 0px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  align-items: center;
+  box-shadow: 0.3rem 0.3rem 0.5rem #000;
+  transition: 0.3s;
+}
+.navbar.active {
+  top: 0px;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+.navbar ul a {
+  margin-right: 100px;
+  color: #aaa;
+  /* text-align: center; */
+}
+.navbar ul a:hover i,
+.navbar ul a:hover span {
+  color: #fff;
+}
+.navbar ul li {
+  text-align: center;
+}
+.navbar ul li a span {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 900;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.navbar ul i {
+  display: block;
+  text-align: center;
+  font-size: 4rem;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+/* end navbar */
+/* menu button */
+.menu-btn {
+  position: relative;
+  width: 37px;
+  height: 60px;
+  background-color: #000;
+  top: 15px;
+  left: 40px;
+  border-radius: 45% 45% 30% 30%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.menu-btn.active {
+  top: 140px;
+}
+.menu-btn::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 12px;
+  background-color: #000;
+  top: -12px;
+}
+/* end menu button */
+/* start of section1 */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-evenly;
+}
+.section-heading {
+  font-size: 12rem;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-shadow: 4px 4px 4px #000;
+  text-transform: capitalize;
+}
+
+.section-1-icons i {
+  font-size: 32.5rem;
+  color: #a79a2d;
+  transform: translate(-50%, -50%) scale(0);
+  position: absolute;
+  text-shadow: 3px 3px 3px #000;
+  transition: 0.3s;
+}
+@media screen and (max-width: 1117px) and (min-width: 897px) {
+  .section-heading {
+    font-size: 9rem;
+  }
+  .section-1-icons i {
+    font-size: 30rem;
+  }
+}
+@media screen and (max-width: 897px) and (min-width: 720px) {
+  .section-heading {
+    font-size: 7rem;
+  }
+  .section-1-icons i {
+    font-size: 27rem;
+  }
+}
+@media screen and (max-width: 720px) and (min-width: 553px) {
+  .section-heading {
+    font-size: 3rem;
+  }
+  .section-1-icons i {
+    font-size: 25rem;
+  }
+}
+@media screen and (max-width: 553px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+  .section-1-icons i {
+    font-size: 23rem;
+  }
+}
+.section-1-icons i.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.3s 0.3s;
+}
+.section-2 {
+  background-color: #222;
+}
+.section-2 .section-heading {
+  color: #fff;
+  text-align: center;
+  padding: 10rem 0px;
+}
+.section-2 .cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.section-2 .cards-container img {
+  width: 100%;
+  /* height: 100%; */
+}
+.section-2 .cards-container .card {
+  background-color: #a79a2d;
+  width: 30rem;
+  text-align: center;
+  padding-bottom: 40px;
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: 0.3s;
+  box-shadow: 1rem 1rem 1rem #000;
+}
+.section-2 .cards-container .card:hover {
+  transform: translateY(-10px) rotateY(20deg) skewX(-2deg);
+  box-shadow: 2rem 2rem 2rem #000;
+}
+.section-2 .cards-container .card::before {
+  content: "";
+  width: 1rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  background-color: #817824;
+  transform: skewY(45deg);
+  transform-origin: right;
+}
+.section-2 .cards-container .card::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  top: -1rem;
+  left: 0px;
+  background-color: #817824;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+}
+.section-2 .cards-container .card h3 {
+  font-weight: 900;
+  font-size: 40px;
+  text-transform: capitalize;
+  letter-spacing: 8px;
+  padding-bottom: 20px;
+}
+.section-2 .cards-container .card a {
+  background-color: #000;
+  padding: 6px 36px;
+  border-radius: 24px;
+  font-size: 20px;
+  color: #888;
+}
+/* end of section2 */
+
+/* start of section3 section */
+.section-3 {
+  background-color: #333;
+  /*height: 100vh;*/
+}
+.section-3 .section-heading {
+  text-align: center;
+  padding: 60px 0px;
+}
+.section-3 .gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 60px;
+}
+.section-3 .gallery-container .gallery-item {
+  width: 25vw;
+  height: 24vh;
+  position: relative;
+}
+.section-3 .gallery-container .gallery-item::before {
+  content: "";
+  position: absolute;
+  left: 7%;
+  top: 25%;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.section-3 .gallery-container .gallery-item:hover:before {
+  width: 80%;
+}
+.section-3 .gallery-container .gallery-item:hover:after {
+  height: 80%;
+}
+.section-3 .gallery-container .gallery-item::after {
+  content: "";
+  position: absolute;
+  right: 20%;
+  top: 7%;
+  height: 0%;
+  width: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.section-3 .gallery-container .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+    0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
+  transition: 0.5s;
+}
+.section-3 .gallery-container .gallery-item h3 {
+  content: "";
+  position: absolute;
+  left: 11%;
+  color: #fff;
+  top: 11%;
+  font-size: 20px;
+  letter-spacing: 8px;
+  width: 0px;
+  overflow: hidden;
+  transition: 0.5s 0.3s;
+}
+.section-3 .gallery-container .gallery-item:hover h3 {
+  width: 50%;
+}
+.section-3 .gallery-container .gallery-item:hover img {
+  box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+    3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
+  transform: scale(1.1);
+  filter: blur(0.5rem);
+  opacity: 0.5;
+}
+.section-3 .gallery-container .gallery-item:hover p {
+  opacity: 1;
+  transition: 0.5s;
+}
+.section-3 .gallery-container .gallery-item p {
+  content: "";
+  position: absolute;
+  left: 7%;
+  color: #fff;
+  top: 35%;
+  font-size: 16px;
+  width: 70%;
+  opacity: 0;
+  transition: 0.5s;
+  max-height: 70%;
+  overflow: hidden;
+}
+
+/* end of section3*/
+/* start section4 */
+footer {
+  background-color: #222;
+  padding: 30px 0px;
+  margin-top: 55px;
+}
+footer .section-4-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .section-4-content .text-content h2 {
+  font-size: 4rem;
+  color: #a79a2d;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+footer .section-4-content .text-content p {
+  color: #888;
+  font-size: 20px;
+}
+footer .section-4-content form input {
+  width: 35rem;
+  height: 5rem;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #a79a2d;
+}
+footer .section-4-content form input::placeholder {
+  color: #a79a2d;
+}
+footer .section-4-content form button {
+  color: #a79a2d;
+  position: relative;
+  left: -42px;
+  bottom: 3px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #222;
+  border: none;
+}
+footer .copy-right {
+  color: #fff;
+  text-align: center;
+  margin-top: 90px;
+  font-size: 19px;
+}
+
+/* end of section4 */
